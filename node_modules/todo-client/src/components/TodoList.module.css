@@ -1,0 +1,83 @@
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  animation: fadeUp 0.28s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.skeleton {
+  height: 64px;
+  background: linear-gradient(90deg, var(--surface) 0%, var(--surface-3) 50%, var(--surface) 100%);
+  background-size: 200% 100%;
+  border-radius: var(--radius);
+  animation: shimmer 1.6s ease-in-out infinite;
+  border: 1px solid var(--border);
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.errorBox {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 20px;
+  background: var(--danger-bg);
+  border: 1px solid rgba(255,92,122,0.2);
+  border-radius: var(--radius);
+}
+
+.errorIcon {
+  color: var(--danger);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.errorTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--danger);
+  margin-bottom: 3px;
+}
+
+.errorMsg {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+.empty {
+  text-align: center;
+  padding: 56px 20px;
+}
+
+.emptyIllustration {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.emptyTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-2);
+  margin-bottom: 7px;
+}
+
+.emptySub {
+  font-size: 13px;
+  color: var(--text-3);
+}

@@ -1,0 +1,196 @@
+.form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 20px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form:focus-within, .formExpanded {
+  border-color: rgba(108,99,255,0.4);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.row1 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.inputWrap {
+  flex: 1;
+  position: relative;
+}
+
+.titleInput {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-1);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  padding: 6px 0;
+}
+
+.titleInput::placeholder { color: var(--text-3); }
+
+.hasError { color: var(--danger); }
+
+.errorTip {
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  font-size: 11px;
+  color: var(--danger);
+}
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.addBtn:hover:not(:disabled) { background: var(--accent-light); transform: translateY(-1px); }
+.addBtn:disabled { opacity: 0.3; cursor: not-allowed; transform: none; }
+
+.extra {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.4,0,0.2,1);
+  overflow: hidden;
+}
+
+.extraOpen { grid-template-rows: 1fr; }
+.extra > * { overflow: hidden; }
+
+.descInput {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  color: var(--text-2);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  resize: none;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.descInput:focus { border-color: var(--accent); }
+.descInput::placeholder { color: var(--text-3); }
+
+.row2 {
+  display: flex;
+  gap: 16px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-3);
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.priorityGroup { flex: 1; min-width: 180px; }
+
+.priorityBtns {
+  display: flex;
+  gap: 6px;
+}
+
+.priorityBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 11px;
+  color: var(--text-2);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.priorityBtn:hover { border-color: var(--border-hover); color: var(--text-1); }
+
+.priorityDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.dueDateGroup {}
+
+.dateInput {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 7px 11px;
+  color: var(--text-2);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  outline: none;
+  transition: border-color var(--transition);
+  color-scheme: dark;
+}
+
+.dateInput:focus { border-color: var(--accent); }
+
+.formFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.charCount { font-size: 11px; color: var(--text-3); }
+
+.cancelBtn {
+  background: none;
+  border: none;
+  color: var(--text-3);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: all var(--transition);
+}
+
+.cancelBtn:hover { background: var(--surface-3); color: var(--text-1); }
+
+.spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
